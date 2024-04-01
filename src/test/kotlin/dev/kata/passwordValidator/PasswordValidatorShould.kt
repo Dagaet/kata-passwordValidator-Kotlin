@@ -33,4 +33,11 @@ internal class PasswordValidatorShould {
         val isPasswordValid = passwordValidator.execute("AAAAA1bC")
         assertThat(isPasswordValid).isEqualTo(true)
     }
+
+    @Test
+    fun `Have at least an underscore`() {
+        val passwordValidator = PasswordValidator()
+        val isPasswordValid = passwordValidator.execute("AAAAA_1bC")
+        assertThat(isPasswordValid).isEqualTo(true)
+    }
 }
