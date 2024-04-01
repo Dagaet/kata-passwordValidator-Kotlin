@@ -9,21 +9,28 @@ internal class PasswordValidatorShould {
     @Test
     fun `Have at least 8 characters`() {
         val passwordValidator = PasswordValidator()
-        val isPasswordValid = passwordValidator.execute("123456Ab")
+        val isPasswordValid = passwordValidator.execute("aaaaa0Ab")
         assertThat(isPasswordValid).isEqualTo(true)
     }
 
     @Test
     fun `Have at least a capital letter`() {
         val passwordValidator = PasswordValidator()
-        val isPasswordValid = passwordValidator.execute("123456bC")
+        val isPasswordValid = passwordValidator.execute("aaaaa0bC")
         assertThat(isPasswordValid).isEqualTo(true)
     }
 
     @Test
     fun `Have at least a lower case letter`() {
         val passwordValidator = PasswordValidator()
-        val isPasswordValid = passwordValidator.execute("123456bC")
+        val isPasswordValid = passwordValidator.execute("AAAAA0bC")
+        assertThat(isPasswordValid).isEqualTo(true)
+    }
+
+    @Test
+    fun `Have at least a number`() {
+        val passwordValidator = PasswordValidator()
+        val isPasswordValid = passwordValidator.execute("AAAAA1bC")
         assertThat(isPasswordValid).isEqualTo(true)
     }
 }
