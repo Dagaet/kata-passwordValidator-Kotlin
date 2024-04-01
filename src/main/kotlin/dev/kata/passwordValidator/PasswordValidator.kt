@@ -7,7 +7,6 @@ class PasswordValidator{
 
     private fun  hasNumber(password: String):Boolean{
         val number = password.count{it.isDigit()}
-        println(number)
         return number >= 1
     }
     private fun hasUnderscore(password: String):Boolean{
