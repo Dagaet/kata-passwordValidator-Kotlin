@@ -2,9 +2,14 @@ package dev.kata.passwordValidator
 
 class PasswordValidator{
     fun execute(password: String): Boolean {
-        return password.length >= 8 && hasLowerAndUpperCase(password)
+        return password.length >= 8 && hasLowerAndUpperCase(password) && hasNumber(password)
     }
 
+    private fun  hasNumber(password: String):Boolean{
+        val number = password.count{it.isDigit()}
+        println(number)
+        return number >= 1
+    }
     private fun hasLowerAndUpperCase(password: String):Boolean{
         val predicateUpperCase: (Char) -> Boolean = { it.isUpperCase() }
         val predicateLowerCase: (Char) -> Boolean = { it.isLowerCase() }
