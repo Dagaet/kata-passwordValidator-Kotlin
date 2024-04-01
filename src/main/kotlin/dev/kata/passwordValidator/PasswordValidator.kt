@@ -2,7 +2,7 @@ package dev.kata.passwordValidator
 
 class PasswordValidator{
     fun execute(something: String): Boolean {
-        return false
+        return something.length >= 8
     }
 }
 

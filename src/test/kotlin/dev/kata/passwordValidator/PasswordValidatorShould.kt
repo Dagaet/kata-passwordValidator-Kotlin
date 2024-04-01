@@ -9,7 +9,7 @@ internal class PasswordValidatorShould {
     @Test
     fun `Have at least 8 characters`() {
         val passwordValidator = PasswordValidator()
-        val isPasswordValid = passwordValidator.execute("Algo")
+        val isPasswordValid = passwordValidator.execute("12345678")
         assertThat(isPasswordValid).isEqualTo(true)
     }
 }
