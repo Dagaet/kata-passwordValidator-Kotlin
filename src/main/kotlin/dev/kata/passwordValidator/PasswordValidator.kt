@@ -1,7 +1,7 @@
 package dev.kata.passwordValidator
 
 class PasswordValidator{
-    fun execute(password: String): Boolean {
+    fun isValid(password: String): Boolean {
         return password.length >= 8 && hasLowerAndUpperCase(password) && hasNumber(password) && hasUnderscore(password)
     }
 
